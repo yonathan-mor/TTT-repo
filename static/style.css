@@ -1,0 +1,211 @@
+/* Wood workshop theme: dark oak (default) and birch (body.inverted) */
+:root {
+    --grain: url("/static/textures/grain.svg");
+    --planks: url("/static/textures/planks.svg");
+    --table: #3b2416;      /* tabletop behind everything */
+    --panel: #5c3a22;      /* main case */
+    --panel-edge: #2a170c;
+    --sq-a: #9a6a42;       /* chessboard light square */
+    --sq-b: #4f301b;       /* chessboard dark square */
+    --frame: #24130a;      /* board frame */
+    --text: #f2e3cc;
+    --muted: #c9a982;
+    --accent: #e3c29b;     /* beige accent */
+    --accent-2: #8b5a3c;   /* brown accent */
+    --x: #f3dcb4;          /* maple inlay */
+    --o: #c8673a;          /* cherry inlay */
+    --inset: #2a180d;
+    --btn: #6e4a2f;
+    --btn-text: #f6e7d0;
+    --glow: #ffcf8a33;
+}
+body.inverted {
+    --table: #c9ad86;
+    --panel: #ecdcbf;
+    --panel-edge: #b79c76;
+    --sq-a: #f6ead2;
+    --sq-b: #d3b388;
+    --frame: #8e6c48;
+    --text: #3a2414;
+    --muted: #7b5a3b;
+    --accent: #6b4228;
+    --accent-2: #c79b6a;
+    --x: #5a321b;          /* walnut inlay */
+    --o: #a64a22;          /* cherry inlay */
+    --inset: #f7eedc;
+    --btn: #dcc29c;
+    --btn-text: #3a2414;
+    --glow: #ffffff55;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    color: var(--text);
+    font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 30%, var(--glow), transparent 60%),
+        radial-gradient(ellipse at center, transparent 50%, #00000080 100%),
+        var(--planks) center / 1200px 1200px,
+        var(--table);
+    background-blend-mode: normal, normal, multiply, normal;
+    transition: color .3s ease;
+}
+
+/* The case: a wooden panel with rubber corner pads */
+main {
+    position: relative;
+    width: min(100%, 36rem);
+    text-align: center;
+    padding: clamp(1.6rem, 5vw, 2.8rem);
+    border-radius: 1.4rem;
+    background:
+        linear-gradient(160deg, #ffffff1a, transparent 40%, #0000001f),
+        var(--grain) 30% 0 / 900px 900px,
+        var(--panel);
+    background-blend-mode: normal, multiply, normal;
+    border: 1px solid var(--panel-edge);
+    box-shadow:
+        inset 0 1px 0 #ffffff26,
+        inset 0 0 0 6px #00000012,
+        0 30px 60px -12px #000000b0;
+}
+main::before, main::after {
+    content: "";
+    position: absolute;
+    inset: .7rem;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 0 0, var(--accent-2) 0 .4rem, transparent .45rem) top left / 1rem 1rem no-repeat,
+        radial-gradient(circle at 100% 0, var(--accent-2) 0 .4rem, transparent .45rem) top right / 1rem 1rem no-repeat,
+        radial-gradient(circle at 0 100%, var(--accent-2) 0 .4rem, transparent .45rem) bottom left / 1rem 1rem no-repeat,
+        radial-gradient(circle at 100% 100%, var(--accent-2) 0 .4rem, transparent .45rem) bottom right / 1rem 1rem no-repeat;
+}
+main::after { display: none; }
+main.wide { width: min(100%, 60rem); }
+
+/* Mono, tech-style labels */
+.eyebrow, .controls-title, .stat small, .log-table th, .legend {
+    font-family: "Cascadia Mono", Consolas, ui-monospace, monospace;
+}
+.eyebrow {
+    display: inline-block;
+    padding: .3rem .85rem;
+    border-radius: .4rem;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-2);
+    background: #00000018;
+}
+
+h1 {
+    margin: .7rem 0 .3rem;
+    font: 700 clamp(2.4rem, 9vw, 3.5rem)/1.05 Georgia, "Times New Roman", serif;
+    letter-spacing: -.02em;
+    color: var(--text);
+    text-shadow: 0 1px 0 #ffffff1f, 0 -1px 0 #00000059;
+}
+h2 { font-family: Georgia, serif; font-weight: 600; margin: 1.6rem 0 .6rem; }
+.subtitle { color: var(--muted); margin: 0; }
+.message { min-height: 1.6rem; margin: 1.3rem 0 .9rem; font-size: 1.08rem; font-weight: 600; }
+
+/* Chessboard: alternating wood squares in a dark frame */
+.board {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 5.6rem);
+    padding: .75rem;
+    margin: 0 auto 1.5rem;
+    border-radius: .6rem;
+    background: var(--grain) 0 0 / 600px 600px, var(--frame);
+    background-blend-mode: multiply, normal;
+    box-shadow: inset 0 0 0 2px #0000004d, inset 0 0 0 4px #ffffff14, 0 10px 24px #00000080;
+}
+.cell {
+    width: 5.6rem;
+    height: 5.6rem;
+    border: 0;
+    border-radius: 0;
+    font: 700 3rem/1 Georgia, serif;
+    background: linear-gradient(160deg, #ffffff14, transparent 50%, #00000024), var(--grain), var(--sq-a);
+    background-size: auto, 700px 700px, auto;
+    background-blend-mode: normal, multiply, normal;
+    box-shadow: inset 0 0 0 1px #00000026;
+    transition: filter .15s ease, box-shadow .15s ease;
+}
+.cell:nth-child(even) { background-color: var(--sq-b); background-position: 0 0, 220px 90px, 0 0; }
+.cell:nth-child(1) { border-top-left-radius: .3rem; }
+.cell:nth-child(3) { border-top-right-radius: .3rem; }
+.cell:nth-child(7) { border-bottom-left-radius: .3rem; }
+.cell:nth-child(9) { border-bottom-right-radius: .3rem; }
+.cell:enabled { cursor: pointer; }
+.cell:enabled:hover { filter: brightness(1.15); box-shadow: inset 0 0 0 2px var(--accent); }
+.cell:disabled { opacity: 1; }
+
+/* X and O: carved wood pieces (SVG filters #wood-x / #wood-o in the page) */
+.cell { display: grid; place-items: center; padding: 0; }
+.piece { width: 82%; height: 82%; overflow: visible; }
+#wood-x .tint { flood-color: var(--x); }
+#wood-o .tint { flood-color: var(--o); }
+
+.controls { border-top: 1px solid #00000033; box-shadow: 0 -1px 0 #ffffff14; padding-top: 1.1rem; }
+.controls-title { margin: 0 0 .7rem; color: var(--muted); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+.control-row { display: flex; flex-wrap: wrap; gap: .55rem; justify-content: center; }
+.control-form { margin: 0; }
+
+/* Wooden keycaps */
+.control-button, .new-game {
+    display: inline-block;
+    border: 1px solid #00000040;
+    border-radius: .55rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: .62rem 1.05rem;
+    text-decoration: none;
+    color: var(--btn-text);
+    background: linear-gradient(180deg, #ffffff1f, #00000014), var(--grain) 0 0 / 500px 500px, var(--btn);
+    background-blend-mode: normal, multiply, normal;
+    box-shadow: inset 0 1px 0 #ffffff2e, 0 3px 0 #00000059, 0 5px 10px #00000040;
+    transition: transform .1s ease, box-shadow .1s ease, filter .15s ease;
+}
+.control-button:hover, .new-game:hover { filter: brightness(1.1); }
+.control-button:active, .new-game:active { transform: translateY(2px); box-shadow: inset 0 1px 0 #ffffff2e, 0 1px 0 #00000059; }
+.new-game {
+    margin-top: 1rem;
+    padding-inline: 1.5rem;
+    color: #2a170c;
+    background-color: var(--accent);
+}
+body.inverted .new-game { color: #f6e7d0; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Battle log */
+.stats { display: flex; flex-wrap: wrap; gap: .7rem; justify-content: center; margin: 1.2rem 0; }
+.stat { min-width: 8rem; padding: .7rem 1rem; border-radius: .6rem; background: var(--inset); box-shadow: inset 0 2px 6px #00000040; }
+.stat b { display: block; font-size: 1.5rem; }
+.stat small { color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; }
+.chart { width: 100%; height: auto; background: var(--inset); border-radius: .6rem; box-shadow: inset 0 2px 6px #00000040; }
+.chart text { fill: var(--muted); }
+.chart line { stroke: var(--muted); stroke-opacity: .25; }
+.legend { display: flex; gap: 1.2rem; justify-content: center; font-size: .82rem; margin: .5rem 0; }
+.legend i { display: inline-block; width: .9rem; height: .25rem; border-radius: 2px; vertical-align: middle; margin-right: .35rem; }
+.table-wrap { max-height: 22rem; overflow: auto; border-radius: .6rem; background: var(--inset); box-shadow: inset 0 2px 6px #00000040; }
+.log-table { width: 100%; border-collapse: collapse; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.log-table th, .log-table td { padding: .4rem .6rem; border-bottom: 1px solid #8080802e; text-align: right; }
+.log-table th { position: sticky; top: 0; background: var(--inset); color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; }
+.log-table th:first-child, .log-table td:first-child { text-align: left; }
+
+@media (max-width: 400px) {
+    .board { grid-template-columns: repeat(3, 4.5rem); }
+    .cell { width: 4.5rem; height: 4.5rem; font-size: 2.4rem; }
+    .control-button { font-size: .82rem; padding: .55rem .8rem; }
+}

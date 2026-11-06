@@ -1,0 +1,418 @@
+{
+ "meta": {
+  "agent_mark": "X",
+  "opponent_mark": "O",
+  "empty": ".",
+  "rewards": {
+   "win": 10,
+   "loss": -12,
+   "draw": 5,
+   "move": 0
+  },
+  "episodes": 50000,
+  "alpha": 0.3,
+  "gamma": 0.9
+ },
+ "blocks": [
+  {
+   "start": 1,
+   "end": 1000,
+   "wins": 409,
+   "losses": 453,
+   "draws": 138,
+   "epsilon": 0.9048
+  },
+  {
+   "start": 1001,
+   "end": 2000,
+   "wins": 438,
+   "losses": 438,
+   "draws": 124,
+   "epsilon": 0.8187
+  },
+  {
+   "start": 2001,
+   "end": 3000,
+   "wins": 497,
+   "losses": 386,
+   "draws": 117,
+   "epsilon": 0.7408
+  },
+  {
+   "start": 3001,
+   "end": 4000,
+   "wins": 474,
+   "losses": 406,
+   "draws": 120,
+   "epsilon": 0.6703
+  },
+  {
+   "start": 4001,
+   "end": 5000,
+   "wins": 551,
+   "losses": 338,
+   "draws": 111,
+   "epsilon": 0.6065
+  },
+  {
+   "start": 5001,
+   "end": 6000,
+   "wins": 591,
+   "losses": 293,
+   "draws": 116,
+   "epsilon": 0.5488
+  },
+  {
+   "start": 6001,
+   "end": 7000,
+   "wins": 587,
+   "losses": 319,
+   "draws": 94,
+   "epsilon": 0.4966
+  },
+  {
+   "start": 7001,
+   "end": 8000,
+   "wins": 638,
+   "losses": 253,
+   "draws": 109,
+   "epsilon": 0.4493
+  },
+  {
+   "start": 8001,
+   "end": 9000,
+   "wins": 665,
+   "losses": 227,
+   "draws": 108,
+   "epsilon": 0.4066
+  },
+  {
+   "start": 9001,
+   "end": 10000,
+   "wins": 690,
+   "losses": 210,
+   "draws": 100,
+   "epsilon": 0.3679
+  },
+  {
+   "start": 10001,
+   "end": 11000,
+   "wins": 693,
+   "losses": 208,
+   "draws": 99,
+   "epsilon": 0.3329
+  },
+  {
+   "start": 11001,
+   "end": 12000,
+   "wins": 743,
+   "losses": 172,
+   "draws": 85,
+   "epsilon": 0.3012
+  },
+  {
+   "start": 12001,
+   "end": 13000,
+   "wins": 770,
+   "losses": 129,
+   "draws": 101,
+   "epsilon": 0.2725
+  },
+  {
+   "start": 13001,
+   "end": 14000,
+   "wins": 753,
+   "losses": 135,
+   "draws": 112,
+   "epsilon": 0.2466
+  },
+  {
+   "start": 14001,
+   "end": 15000,
+   "wins": 782,
+   "losses": 122,
+   "draws": 96,
+   "epsilon": 0.2231
+  },
+  {
+   "start": 15001,
+   "end": 16000,
+   "wins": 765,
+   "losses": 118,
+   "draws": 117,
+   "epsilon": 0.2019
+  },
+  {
+   "start": 16001,
+   "end": 17000,
+   "wins": 791,
+   "losses": 97,
+   "draws": 112,
+   "epsilon": 0.1827
+  },
+  {
+   "start": 17001,
+   "end": 18000,
+   "wins": 816,
+   "losses": 98,
+   "draws": 86,
+   "epsilon": 0.1653
+  },
+  {
+   "start": 18001,
+   "end": 19000,
+   "wins": 827,
+   "losses": 90,
+   "draws": 83,
+   "epsilon": 0.1496
+  },
+  {
+   "start": 19001,
+   "end": 20000,
+   "wins": 829,
+   "losses": 83,
+   "draws": 88,
+   "epsilon": 0.1353
+  },
+  {
+   "start": 20001,
+   "end": 21000,
+   "wins": 852,
+   "losses": 54,
+   "draws": 94,
+   "epsilon": 0.1224
+  },
+  {
+   "start": 21001,
+   "end": 22000,
+   "wins": 858,
+   "losses": 54,
+   "draws": 88,
+   "epsilon": 0.1108
+  },
+  {
+   "start": 22001,
+   "end": 23000,
+   "wins": 867,
+   "losses": 51,
+   "draws": 82,
+   "epsilon": 0.1002
+  },
+  {
+   "start": 23001,
+   "end": 24000,
+   "wins": 845,
+   "losses": 60,
+   "draws": 95,
+   "epsilon": 0.0907
+  },
+  {
+   "start": 24001,
+   "end": 25000,
+   "wins": 860,
+   "losses": 44,
+   "draws": 96,
+   "epsilon": 0.0821
+  },
+  {
+   "start": 25001,
+   "end": 26000,
+   "wins": 879,
+   "losses": 46,
+   "draws": 75,
+   "epsilon": 0.0743
+  },
+  {
+   "start": 26001,
+   "end": 27000,
+   "wins": 871,
+   "losses": 45,
+   "draws": 84,
+   "epsilon": 0.0672
+  },
+  {
+   "start": 27001,
+   "end": 28000,
+   "wins": 903,
+   "losses": 30,
+   "draws": 67,
+   "epsilon": 0.0608
+  },
+  {
+   "start": 28001,
+   "end": 29000,
+   "wins": 894,
+   "losses": 33,
+   "draws": 73,
+   "epsilon": 0.055
+  },
+  {
+   "start": 29001,
+   "end": 30000,
+   "wins": 908,
+   "losses": 27,
+   "draws": 65,
+   "epsilon": 0.05
+  },
+  {
+   "start": 30001,
+   "end": 31000,
+   "wins": 919,
+   "losses": 24,
+   "draws": 57,
+   "epsilon": 0.05
+  },
+  {
+   "start": 31001,
+   "end": 32000,
+   "wins": 898,
+   "losses": 23,
+   "draws": 79,
+   "epsilon": 0.05
+  },
+  {
+   "start": 32001,
+   "end": 33000,
+   "wins": 902,
+   "losses": 32,
+   "draws": 66,
+   "epsilon": 0.05
+  },
+  {
+   "start": 33001,
+   "end": 34000,
+   "wins": 904,
+   "losses": 26,
+   "draws": 70,
+   "epsilon": 0.05
+  },
+  {
+   "start": 34001,
+   "end": 35000,
+   "wins": 886,
+   "losses": 30,
+   "draws": 84,
+   "epsilon": 0.05
+  },
+  {
+   "start": 35001,
+   "end": 36000,
+   "wins": 878,
+   "losses": 31,
+   "draws": 91,
+   "epsilon": 0.05
+  },
+  {
+   "start": 36001,
+   "end": 37000,
+   "wins": 890,
+   "losses": 40,
+   "draws": 70,
+   "epsilon": 0.05
+  },
+  {
+   "start": 37001,
+   "end": 38000,
+   "wins": 868,
+   "losses": 29,
+   "draws": 103,
+   "epsilon": 0.05
+  },
+  {
+   "start": 38001,
+   "end": 39000,
+   "wins": 892,
+   "losses": 36,
+   "draws": 72,
+   "epsilon": 0.05
+  },
+  {
+   "start": 39001,
+   "end": 40000,
+   "wins": 898,
+   "losses": 27,
+   "draws": 75,
+   "epsilon": 0.05
+  },
+  {
+   "start": 40001,
+   "end": 41000,
+   "wins": 881,
+   "losses": 26,
+   "draws": 93,
+   "epsilon": 0.05
+  },
+  {
+   "start": 41001,
+   "end": 42000,
+   "wins": 875,
+   "losses": 32,
+   "draws": 93,
+   "epsilon": 0.05
+  },
+  {
+   "start": 42001,
+   "end": 43000,
+   "wins": 898,
+   "losses": 27,
+   "draws": 75,
+   "epsilon": 0.05
+  },
+  {
+   "start": 43001,
+   "end": 44000,
+   "wins": 891,
+   "losses": 35,
+   "draws": 74,
+   "epsilon": 0.05
+  },
+  {
+   "start": 44001,
+   "end": 45000,
+   "wins": 889,
+   "losses": 25,
+   "draws": 86,
+   "epsilon": 0.05
+  },
+  {
+   "start": 45001,
+   "end": 46000,
+   "wins": 868,
+   "losses": 40,
+   "draws": 92,
+   "epsilon": 0.05
+  },
+  {
+   "start": 46001,
+   "end": 47000,
+   "wins": 894,
+   "losses": 24,
+   "draws": 82,
+   "epsilon": 0.05
+  },
+  {
+   "start": 47001,
+   "end": 48000,
+   "wins": 881,
+   "losses": 28,
+   "draws": 91,
+   "epsilon": 0.05
+  },
+  {
+   "start": 48001,
+   "end": 49000,
+   "wins": 900,
+   "losses": 24,
+   "draws": 76,
+   "epsilon": 0.05
+  },
+  {
+   "start": 49001,
+   "end": 50000,
+   "wins": 894,
+   "losses": 31,
+   "draws": 75,
+   "epsilon": 0.05
+  }
+ ]
+}
